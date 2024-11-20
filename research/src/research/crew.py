@@ -1,10 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # Uncomment the following line to use an example of a custom tool
 # from research.tools.custom_tool import MyCustomTool
 
@@ -12,8 +8,11 @@ load_dotenv()
 # from crewai_tools import SerperDevTool
 
 @CrewBase
-class ResearchCrew():
+class Research():
 	"""Research crew"""
+
+	agents_config = 'config/agents.yaml'
+	tasks_config = 'config/tasks.yaml'
 
 	@agent
 	def researcher(self) -> Agent:
